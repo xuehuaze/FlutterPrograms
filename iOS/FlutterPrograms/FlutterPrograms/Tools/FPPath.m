@@ -15,7 +15,7 @@
 }
 
 + (NSString *)applicationPath {
-    return [HJM_PathDocuments stringByAppendingPathComponent:@"Application"];
+    return [NN_pathDocuments stringByAppendingPathComponent:@"Application"];
 }
 
 + (NSString *)appBundlesPath {
@@ -67,7 +67,7 @@
 }
 
 + (NSString *)programsPath {
-    return [HJM_PathDocuments stringByAppendingPathComponent:@"Programs"];
+    return [NN_pathDocuments stringByAppendingPathComponent:@"Programs"];
 }
 
 + (NSString *)programBundlePathWithSpec:(FPSpec *)spec {

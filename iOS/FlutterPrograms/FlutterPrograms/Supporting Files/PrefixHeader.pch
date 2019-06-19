@@ -17,7 +17,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SSZipArchive/SSZipArchive.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <HJMacros/HJMacros.h>
+#import <NNMacros/NNMacros.h>
 #import <Masonry/Masonry.h>
 #import <FileMD5Hash/FileHash.h>
 #import <middleman/MiddlemanPlugin.h>

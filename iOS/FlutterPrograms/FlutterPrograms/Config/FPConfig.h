@@ -10,7 +10,7 @@
 #define FPConfig_h
 
 #import <Foundation/Foundation.h>
-#import <HJMacros/HJMacros.h>
+#import <NNMacros/NNMacros.h>
 
 #define FP_NSLog(format, ...)      {NSLog((@"[%s] %s [Line %d] " format), __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
 
@@ -27,7 +27,7 @@ static inline NSString *FPApplicationUpdateSpecFileRemoteUrl() {
 }
 
 static inline NSString *FPApplicationUpdateSpecLocalPath() {
-    return [HJM_PathDocuments stringByAppendingPathComponent:@"ApplicationUpdateSpec"];
+    return [NN_pathDocuments stringByAppendingPathComponent:@"ApplicationUpdateSpec"];
 }
 
 static inline NSString *FPApplicationUpdateSpecFileLocalPath() {
@@ -35,7 +35,7 @@ static inline NSString *FPApplicationUpdateSpecFileLocalPath() {
 }
 
 static inline NSString *FPApplicationPath() {
-    return [HJM_PathDocuments stringByAppendingPathComponent:@"Application"];
+    return [NN_pathDocuments stringByAppendingPathComponent:@"Application"];
 }
 
 static inline NSString *FPApplicationSpecFilePath() {
@@ -59,7 +59,7 @@ static inline NSString *FPMainBundleApplicationSpecFilePath() {
 }
 
 static inline NSString *FPApplicationAssertTempPath() {
-    return [HJM_PathCaches stringByAppendingPathComponent:@"ApplicationAssetsTemp"];
+    return [NN_pathCaches stringByAppendingPathComponent:@"ApplicationAssetsTemp"];
 }
 
 static inline NSString *FPApplicationAssertFileTempPath() {

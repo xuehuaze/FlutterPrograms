@@ -27,12 +27,12 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - HJMacros (0.6.0):
-    - HJMacros/Bases (= 0.6.0)
-  - HJMacros/Bases (0.6.0)
   - Masonry (1.1.0)
   - middleman (0.0.1):
     - Flutter
+  - NNMacros (1.2.2):
+    - NNMacros/Bases (= 1.2.2)
+  - NNMacros/Bases (1.2.2)
   - path_provider (0.0.1):
     - Flutter
   - share (0.5.2):
@@ -52,9 +52,9 @@ DEPENDENCIES:
   - FileMD5Hash
   - Flutter (from `../../flutter_module/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
-  - HJMacros (= 0.6.0)
   - Masonry (= 1.1.0)
   - middleman (from `../../flutter_module/.ios/Flutter/.symlinks/middleman/ios`)
+  - NNMacros (= 1.2.2)
   - path_provider (from `../../flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
   - share (from `../../flutter_module/.ios/Flutter/.symlinks/share/ios`)
   - shared_preferences (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
@@ -68,8 +68,8 @@ SPEC REPOS:
     - AFNetworking
     - FileMD5Hash
     - FMDB
-    - HJMacros
     - Masonry
+    - NNMacros
     - SSZipArchive
     - SVProgressHUD
 
@@ -97,9 +97,9 @@ SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   FlutterPluginRegistrant: 88d83444799e8f939ce036ef4b26612dcc51ca6e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  HJMacros: 49759546fd8dd284a58caea4fd61dcc57ec8a4f8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   middleman: 196cb3b2e65de3c66b50d27caf258109a498cfc6
+  NNMacros: bbfdaaef639557722eb017d0202bb98ce2654eca
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   share: 7d22fe8baedfe93aefd864bf0b73f29711fbb0a3
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
@@ -108,6 +108,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 
-PODFILE CHECKSUM: 1af4deba067715404b085880ea58a820635cdce2
+PODFILE CHECKSUM: f0348ef12539a0bd91f0787cc57d0db83efa01c8
 
 COCOAPODS: 1.7.0
