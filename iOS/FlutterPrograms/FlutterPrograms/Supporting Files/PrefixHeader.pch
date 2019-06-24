@@ -14,6 +14,7 @@
 
 #import "FPConfig.h"
 
+#import <Flutter/Flutter.h>
 #import <AFNetworking/AFNetworking.h>
 #import <SSZipArchive/SSZipArchive.h>
 #import <SVProgressHUD/SVProgressHUD.h>
