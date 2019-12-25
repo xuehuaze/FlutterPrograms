@@ -9,9 +9,9 @@
         "https://raw.githubusercontent.com/dart-lang/site-shared/6ea7736189198de9bc0deb718768f972c49b82c1/src/_assets/image/flutter/logo%2Btext/vertical/default.png"
     ],
     "flutterAssertUrl" : "",
-    "flutterAssertMD5" : "7a27c5fa0ab1a3fddd7827cb215a40bb",
+    "flutterAssertMD5" : "1dc5fce5546ee655b2e629675cfd5ed3",
     "github" : "https://github.com/FlutterPrograms/FlutterPrograms",
     "feature" : "flutter programs",
     "versionRecord" : "",
-    "flutterVersion" : "1.5.4.2"
+    "flutterVersion" : "1.12.13.0"
 }

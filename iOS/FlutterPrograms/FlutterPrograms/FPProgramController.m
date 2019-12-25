@@ -17,17 +17,10 @@
 
 @implementation FPProgramController
 
-- (void)loadView {
-    [super loadView];
-    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj removeFromSuperview];
-    }];
-    self.view.backgroundColor = [UIColor whiteColor];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.åå
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.closeButton];
     
     [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,6 +37,10 @@
     else {
         [self dismissViewControllerAnimated:true completion:nil];
     }
+}
+
+- (BOOL)loadDefaultSplashScreenView {
+    return false;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

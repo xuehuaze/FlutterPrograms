@@ -80,6 +80,7 @@
     }
     NSString *LaunchAssertPath = [FPPath programLaunchAssertPathWithSpec:spec];
     FPProgramController *vc = [[FPProgramController alloc] initWithFlutterAssertPath:LaunchAssertPath nibName:nil bundle:nil];
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
     [GeneratedPluginRegistrant registerWithRegistry:vc.pluginRegistry];
     [self presentViewController:vc animated:true completion:nil];
     

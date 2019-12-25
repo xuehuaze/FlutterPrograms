@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:path/path.dart' as path;
 import '../tools/logging.dart';

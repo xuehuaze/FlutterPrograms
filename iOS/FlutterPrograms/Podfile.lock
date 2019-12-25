@@ -16,6 +16,9 @@ PODS:
     - AFNetworking/NSURLSession
   - FileMD5Hash (2.0.0)
   - Flutter (1.0.0)
+  - flutter_module (0.0.1):
+    - Flutter
+  - FlutterHotLoad (1.0.0)
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
     - middleman
@@ -39,6 +42,8 @@ PODS:
     - Flutter
   - shared_preferences (0.0.1):
     - Flutter
+  - shared_preferences_macos (0.0.1):
+    - Flutter
   - sqflite (0.0.1):
     - Flutter
     - FMDB (~> 2.7.2)
@@ -46,11 +51,17 @@ PODS:
   - SVProgressHUD (2.2.5)
   - url_launcher (0.0.1):
     - Flutter
+  - url_launcher_macos (0.0.1):
+    - Flutter
+  - url_launcher_web (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - AFNetworking
   - FileMD5Hash
-  - Flutter (from `../../flutter_module/.ios/Flutter/engine`)
+  - Flutter (from `../../flutter_module/engine`)
+  - flutter_module (from `../../flutter_module/.ios/Flutter`)
+  - FlutterHotLoad (from `../flutter_frameworks/FlutterHotLoad.podspec`)
   - FlutterPluginRegistrant (from `../../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - Masonry (= 1.1.0)
   - middleman (from `../../flutter_module/.ios/Flutter/.symlinks/middleman/ios`)
@@ -58,13 +69,16 @@ DEPENDENCIES:
   - path_provider (from `../../flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
   - share (from `../../flutter_module/.ios/Flutter/.symlinks/share/ios`)
   - shared_preferences (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
+  - shared_preferences_macos (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_macos/ios`)
   - sqflite (from `../../flutter_module/.ios/Flutter/.symlinks/sqflite/ios`)
-  - SSZipArchive
+  - SSZipArchive (= 2.1.4)
   - SVProgressHUD
   - url_launcher (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher/ios`)
+  - url_launcher_macos (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher_macos/ios`)
+  - url_launcher_web (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher_web/ios`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - FileMD5Hash
     - FMDB
@@ -75,7 +89,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "../../flutter_module/.ios/Flutter/engine"
+    :path: "../../flutter_module/engine"
+  flutter_module:
+    :path: "../../flutter_module/.ios/Flutter"
+  FlutterHotLoad:
+    :path: "../flutter_frameworks/FlutterHotLoad.podspec"
   FlutterPluginRegistrant:
     :path: "../../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
   middleman:
@@ -86,28 +104,39 @@ EXTERNAL SOURCES:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/share/ios"
   shared_preferences:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
+  shared_preferences_macos:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_macos/ios"
   sqflite:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/sqflite/ios"
   url_launcher:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/url_launcher/ios"
+  url_launcher_macos:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/url_launcher_macos/ios"
+  url_launcher_web:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/url_launcher_web/ios"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FileMD5Hash: 3ed69cc19a21ff4d30ae8833fc104275ad2c7de0
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
-  FlutterPluginRegistrant: 88d83444799e8f939ce036ef4b26612dcc51ca6e
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_module: 37f078337caf8acad3074374a49bf81442fd3e07
+  FlutterHotLoad: b05a8d11b07ace9c0efc37199643551ce081d547
+  FlutterPluginRegistrant: 1f6fa9ecc74b3d1ed99f6f2820de9188511d999e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  middleman: 196cb3b2e65de3c66b50d27caf258109a498cfc6
+  middleman: ef2384ce1d51ccd34f34b24d81e097abbfe7c79e
   NNMacros: bbfdaaef639557722eb017d0202bb98ce2654eca
-  path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
-  share: 7d22fe8baedfe93aefd864bf0b73f29711fbb0a3
-  shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
-  sqflite: ff1d9da63c06588cc8d1faf7256d741f16989d5a
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
+  share: bae0a282aab4483288913fc4dc0b935d4b491f2e
+  shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
+  shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
+  sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
+  url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
+  url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
+  url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
 
-PODFILE CHECKSUM: f0348ef12539a0bd91f0787cc57d0db83efa01c8
+PODFILE CHECKSUM: 10dcdef3deac3031382df34b52fd6b10e5075ddd
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.8.4
