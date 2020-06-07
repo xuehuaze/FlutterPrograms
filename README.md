@@ -17,6 +17,7 @@
 - 新建终端，进入 `tools` 目录 ，执行 `./tools.sh setup` 。
 - 使用 Xcode 在 `iOS/FlutterPrograms` 目录中 `FlutterPrograms.xcworkspace` 
 - 设置 `Product->Scheme->Edit Scheme->Run->Build Configuration` 为 `DebugHotLoad`。
+- 新建终端，进入 `iOS/FlutterPrograms` 目录，执行 `pod install` 。
 - `cmd + r` 运行 FlutterPrograms 。
 
 ## 详细介绍
