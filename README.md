@@ -13,10 +13,11 @@
 
 ## 应用构建
 
-- 搭建 Flutter 环境，项目环境为 Flutter 1.0.0 。
-- 新建终端，进入 `iOS/FlutterPrograms` 目录 ，执行 `pod install` 。
-- 使用 Xcode 打开 `iOS/FlutterPrograms` 目录下的 `FlutterPrograms.xcworkspace` 。
-- 选择 `FlutterProgramsHotUpdate` scheme ， `cmd + r` 运行 FlutterPrograms 。
+- 搭建 Flutter 环境，项目环境为 Flutter 1.12.13 。
+- 新建终端，进入 `tools` 目录 ，执行 `./tools.sh setup` 。
+- 使用 Xcode 在 `iOS/FlutterPrograms` 目录中 `FlutterPrograms.xcworkspace` 
+- 设置 `Product->Scheme->Edit Scheme->Run->Build Configuration` 为 `DebugHotLoad`。
+- `cmd + r` 运行 FlutterPrograms 。
 
 ## 详细介绍
 
