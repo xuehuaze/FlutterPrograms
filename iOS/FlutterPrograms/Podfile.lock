@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - FileMD5Hash (2.0.0)
   - Flutter (1.0.0)
@@ -33,21 +33,27 @@ PODS:
   - Masonry (1.1.0)
   - middleman (0.0.1):
     - Flutter
-  - NNMacros (1.2.2):
-    - NNMacros/Bases (= 1.2.2)
-  - NNMacros/Bases (1.2.2)
+  - NNMacros (2.4.1):
+    - NNMacros/Bases (= 2.4.1)
+  - NNMacros/Bases (2.4.1)
   - path_provider (0.0.1):
     - Flutter
-  - share (0.5.2):
+  - path_provider_linux (0.0.1):
+    - Flutter
+  - path_provider_macos (0.0.1):
+    - Flutter
+  - share (0.0.1):
     - Flutter
   - shared_preferences (0.0.1):
     - Flutter
   - shared_preferences_macos (0.0.1):
     - Flutter
+  - shared_preferences_web (0.0.1):
+    - Flutter
   - sqflite (0.0.1):
     - Flutter
     - FMDB (~> 2.7.2)
-  - SSZipArchive (2.1.4)
+  - SSZipArchive (2.2.3)
   - SVProgressHUD (2.2.5)
   - url_launcher (0.0.1):
     - Flutter
@@ -63,22 +69,25 @@ DEPENDENCIES:
   - flutter_module (from `../../flutter_module/.ios/Flutter`)
   - FlutterHotLoad (from `../flutter_frameworks/FlutterHotLoad.podspec`)
   - FlutterPluginRegistrant (from `../../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
-  - Masonry (= 1.1.0)
+  - Masonry
   - middleman (from `../../flutter_module/.ios/Flutter/.symlinks/middleman/ios`)
-  - NNMacros (= 1.2.2)
+  - NNMacros
   - path_provider (from `../../flutter_module/.ios/Flutter/.symlinks/path_provider/ios`)
+  - path_provider_linux (from `../../flutter_module/.ios/Flutter/.symlinks/path_provider_linux/ios`)
+  - path_provider_macos (from `../../flutter_module/.ios/Flutter/.symlinks/path_provider_macos/ios`)
   - share (from `../../flutter_module/.ios/Flutter/.symlinks/share/ios`)
   - shared_preferences (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios`)
   - shared_preferences_macos (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_macos/ios`)
+  - shared_preferences_web (from `../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_web/ios`)
   - sqflite (from `../../flutter_module/.ios/Flutter/.symlinks/sqflite/ios`)
-  - SSZipArchive (= 2.1.4)
+  - SSZipArchive
   - SVProgressHUD
   - url_launcher (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher/ios`)
   - url_launcher_macos (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher_macos/ios`)
   - url_launcher_web (from `../../flutter_module/.ios/Flutter/.symlinks/url_launcher_web/ios`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - FileMD5Hash
     - FMDB
@@ -100,12 +109,18 @@ EXTERNAL SOURCES:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/middleman/ios"
   path_provider:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/path_provider/ios"
+  path_provider_linux:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/path_provider_linux/ios"
+  path_provider_macos:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/path_provider_macos/ios"
   share:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/share/ios"
   shared_preferences:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/shared_preferences/ios"
   shared_preferences_macos:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_macos/ios"
+  shared_preferences_web:
+    :path: "../../flutter_module/.ios/Flutter/.symlinks/shared_preferences_web/ios"
   sqflite:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/sqflite/ios"
   url_launcher:
@@ -116,7 +131,7 @@ EXTERNAL SOURCES:
     :path: "../../flutter_module/.ios/Flutter/.symlinks/url_launcher_web/ios"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FileMD5Hash: 3ed69cc19a21ff4d30ae8833fc104275ad2c7de0
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_module: 37f078337caf8acad3074374a49bf81442fd3e07
@@ -124,19 +139,22 @@ SPEC CHECKSUMS:
   FlutterPluginRegistrant: 1f6fa9ecc74b3d1ed99f6f2820de9188511d999e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  middleman: ef2384ce1d51ccd34f34b24d81e097abbfe7c79e
-  NNMacros: bbfdaaef639557722eb017d0202bb98ce2654eca
-  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
-  share: bae0a282aab4483288913fc4dc0b935d4b491f2e
-  shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
+  middleman: 84ab43e214d95114b94ec6733de7026794e23998
+  NNMacros: 81ba503ea69cb0171b87f01fb72afc182adfd596
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
+  path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
+  share: 0b2c3e82132f5888bccca3351c504d0003b3b410
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
+  shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
   sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
-  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
   url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
   url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
 
-PODFILE CHECKSUM: 10dcdef3deac3031382df34b52fd6b10e5075ddd
+PODFILE CHECKSUM: fc96a498ca6923fc956ab2d61799193bfdcb0027
 
 COCOAPODS: 1.8.4

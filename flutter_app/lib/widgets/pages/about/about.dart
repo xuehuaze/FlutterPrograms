@@ -8,10 +8,7 @@ class About extends BasePage {
 }
 
 class _AboutState extends State<About> {
-  var iconUrl = '';
-  var name = '';
-  var version = '';
-  var description = '';
+  Spec spec;
 
   @override
   void initState() {
@@ -20,10 +17,7 @@ class _AboutState extends State<About> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       getAppSpec().then((spec) {
         setState(() {
-          iconUrl = spec.iconUrl;
-          name = spec.name;
-          version = spec.version;
-          description = spec.description;
+          this.spec = spec;
         });
       });
     });
@@ -49,20 +43,22 @@ class _AboutState extends State<About> {
                   width: 64,
                   height: 64,
                   child: ClipRRect(
-                      borderRadius: BorderRadius.circular(18),
-                      child: () {
-                        if (iconUrl.length != 0) {
-                          return CachedNetworkImage(
-                            fit: BoxFit.contain,
-                            placeholder: (context, url) => Image.asset(
-                                'images/icon.png',
-                                package: 'flutter_app'),
-                            imageUrl: iconUrl,
-                          );
-                        } else {
-                          return null;
-                        }
-                      }()),
+                    borderRadius: BorderRadius.circular(18),
+                    child: () {
+                      if (spec?.iconUrl?.length != 0) {
+                        return CachedNetworkImage(
+                          fit: BoxFit.contain,
+                          placeholder: (context, url) => Image.asset(
+                            'images/icon.png',
+                            package: 'flutter_app',
+                          ),
+                          imageUrl: spec?.iconUrl,
+                        );
+                      } else {
+                        return null;
+                      }
+                    }(),
+                  ),
                 ),
               ),
             ),
@@ -70,7 +66,7 @@ class _AboutState extends State<About> {
               padding: EdgeInsets.only(top: 34),
             ),
             Text(
-              name,
+              spec?.name ?? '',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
@@ -80,7 +76,19 @@ class _AboutState extends State<About> {
               padding: EdgeInsets.only(top: 15),
             ),
             Text(
-              version,
+              spec?.version ?? '',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 15),
+            ),
+            Text(
+              spec?.flutterVersion == null
+                  ? ''
+                  : 'flutter：' + spec?.flutterVersion,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.normal,
@@ -95,7 +103,7 @@ class _AboutState extends State<About> {
                 child: Wrap(
                   children: <Widget>[
                     Text(
-                      description,
+                      spec?.description ?? '',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.normal,

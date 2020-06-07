@@ -179,6 +179,6 @@ static FPAppBundleManager *_instance = nil;
     [downloadTask resume];
 }
 
-lazygetter(NSArray, appBundles)
+nn_lazygetter(NSArray, appBundles)
 
 @end

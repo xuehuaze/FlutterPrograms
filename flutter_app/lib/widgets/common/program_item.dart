@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../assert.dart';
 
-class ProgramItemInfo {
+class ProgramItemInfo extends ChangeNotifier {
   ProgramItemInfo({
     this.index,
     this.spec,
-    this.showProcess,
-    this.processValue,
     this.buttonTitle,
     this.buttonOnPressed,
     this.itemOnPressed,
@@ -16,21 +15,32 @@ class ProgramItemInfo {
 
   int index;
   Spec spec;
-  bool showProcess;
-  double processValue;
+  bool _showProcess = false;
+  double _processValue = 0.0;
   String buttonTitle;
   void Function(ProgramItemInfo info) buttonOnPressed;
   void Function(ProgramItemInfo info) itemOnPressed;
   bool isLastItem;
+
+  set showProcess(bool showProcess) {
+    _showProcess = showProcess;
+    notifyListeners();
+  }
+
+  bool get showProcess => _showProcess;
+
+  set processValue(double processValue) {
+    _processValue = processValue;
+    notifyListeners();
+  }
+
+  double get processValue => _processValue;
 }
 
 class ProgramItemWidget extends StatefulWidget {
   ProgramItemWidget({
     Key key,
-    this.info,
   }) : super(key: key);
-
-  final ProgramItemInfo info;
 
   _ProgramItemWidgetState createState() => _ProgramItemWidgetState();
 }
@@ -39,6 +49,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
     with UpdateStateMixin<ProgramItemWidget> {
   @override
   Widget build(BuildContext context) {
+    var info = Provider.of<ProgramItemInfo>(context);
     final Widget row = GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
@@ -80,7 +91,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
                               placeholder: (context, url) => Image.asset(
                                   'images/icon_60pt.png',
                                   package: 'flutter_app'),
-                              imageUrl: widget.info.spec.iconUrl,
+                              imageUrl: info.spec.iconUrl,
                             ),
                           ),
                         ),
@@ -90,7 +101,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           child: Text(
-                            widget.info.spec.name,
+                            info.spec.name,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -116,7 +127,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
                       Padding(padding: EdgeInsets.only(top: 6.0)),
                       // 作者
                       Text(
-                        '作者：' + widget.info.spec.author,
+                        '作者：' + info.spec.author,
                         style: TextStyle(
                           color: Color(0xFF3333333),
                           fontSize: 11.0,
@@ -127,7 +138,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
                       // 描述
                       Expanded(
                         child: Text(
-                          '简介：' + widget.info.spec.description,
+                          '简介：' + info.spec.description,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -149,10 +160,12 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
                   width: 74,
                   height: 32,
                   child: DownloadButton(
-                    title: widget.info.buttonTitle,
-                    showProcess: widget.info.showProcess,
-                    progressValue: widget.info.processValue,
-                    onPressed: buttonOnPressed,
+                    title: info.buttonTitle,
+                    showProcess: info.showProcess,
+                    progressValue: info.processValue,
+                    onPressed: (){
+                      buttonOnPressed(info);
+                    },
                   ),
                 ),
                 Padding(
@@ -163,7 +176,7 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
           ),
         ));
 
-    if (widget.info.isLastItem) {
+    if (info.isLastItem) {
       return row;
     }
 
@@ -178,13 +191,13 @@ class _ProgramItemWidgetState extends State<ProgramItemWidget>
     );
   }
 
-  void buttonOnPressed() {
-    widget.info.buttonOnPressed(widget.info);
+  void buttonOnPressed(ProgramItemInfo info) {
+    info.buttonOnPressed(info);
   }
 
   @override
   void dispose() {
-    log.info('find item dispose' + widget.info.spec.id);
+    log.info('find item dispose');
     super.dispose();
   }
 }

@@ -7,7 +7,7 @@ class EmptyWidget extends StatefulWidget {
     Key key, 
     this.message, 
     this.icon, 
-    this.onRefresh
+    this.onRefresh,
     }) : super(key: key);
 
   final IconData icon;

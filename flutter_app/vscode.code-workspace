@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../flutter_dev"
+		},
+		{
+			"path": "../flutter_module"
+		},
+		{
+			"path": "../flutter_plugin"
+		},
+		{
+			"path": "../iOS"
+		}
+	]
+}

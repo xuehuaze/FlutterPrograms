@@ -47,7 +47,7 @@
     return UIStatusBarStyleLightContent;
 }
 
-lazygetter(UIButton, closeButton, {
+nn_lazygetter(UIButton, closeButton, {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
     [button setTitle:@"ㄨ" forState:UIControlStateNormal];

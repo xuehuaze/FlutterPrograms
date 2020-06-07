@@ -53,22 +53,23 @@ class _HomeState extends State<Home> {
           ),
           Container(
             child: GridView.builder(
-                padding: EdgeInsets.only(top: 12, left: 10, right: 10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  childAspectRatio: 0.9,
-                ),
-                itemCount: _specs.length,
-                itemBuilder: (context, index) {
-                  return HomeItem(
-                    index: index,
-                    lastItem: index == _specs.length - 1,
-                    spec: _specs[index],
-                    onPressed: ({Spec spec}) {
-                      _handleItemPressed(spec: spec);
-                    },
-                  );
-                }),
+              padding: EdgeInsets.only(top: 12, left: 10, right: 10),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                childAspectRatio: 0.9,
+              ),
+              itemCount: _specs.length,
+              itemBuilder: (context, index) {
+                return HomeItem(
+                  index: index,
+                  lastItem: index == _specs.length - 1,
+                  spec: _specs[index],
+                  onPressed: ({Spec spec}) {
+                    _handleItemPressed(spec: spec);
+                  },
+                );
+              },
+            ),
           ),
         ],
       ),
@@ -116,7 +117,6 @@ class HomeItem extends StatefulWidget {
 }
 
 class _HomeItemState extends State<HomeItem> with UpdateStateMixin<HomeItem> {
-
   @override
   Widget build(BuildContext context) {
     final Widget item = GestureDetector(

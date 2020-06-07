@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../assert.dart';
 
@@ -50,6 +51,7 @@ class _FavoriteState extends State<Favorite>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     var index = _widgetIndex.index;
     return Scaffold(
       // appBar: AppBar(title: Text(widget.title)),
@@ -69,8 +71,10 @@ class _FavoriteState extends State<Favorite>
             child: ListView.builder(
               padding: EdgeInsets.only(top: 12, bottom: 12),
               itemBuilder: (BuildContext context, int index) {
-                var item = _itemsInfo[index];
-                return ProgramItemWidget(info: item);
+                return ChangeNotifierProvider.value(
+                  value: _itemsInfo[index],
+                  child: ProgramItemWidget(),
+                );
               },
               itemCount: _itemsInfo.length,
             ),
@@ -108,8 +112,6 @@ class _FavoriteState extends State<Favorite>
       var item = ProgramItemInfo(
         index: index,
         spec: _specs[index],
-        showProcess: false,
-        processValue: 0.0,
         buttonTitle: spec.canUpdate ? '升级' : '打开',
         buttonOnPressed: (ProgramItemInfo info) {
           if (info.spec.canUpdate == true) {
@@ -152,11 +154,9 @@ class _FavoriteState extends State<Favorite>
     try {
       await ProgramsManager().downloadProgram(itemInfo.spec,
           onProgress: (received, total, process) {
-        setState(() {
-          var _itemInfo = _itemsInfo[_itemsInfo.indexOf(itemInfo)];
-          _itemInfo.processValue = process;
-          _itemInfo.showProcess = true;
-        });
+        var _itemInfo = _itemsInfo[_itemsInfo.indexOf(itemInfo)];
+        _itemInfo.processValue = process;
+        _itemInfo.showProcess = true;
       });
       if (mounted) {
         _itemsInfo.remove(itemInfo);

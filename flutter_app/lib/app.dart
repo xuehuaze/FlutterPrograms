@@ -31,32 +31,32 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          // 底部导航
-          items:buildBarItems(context),
-          currentIndex: _activeIndex,
-          onTap: _onItemTapped,
-        ),
-        body: IndexedStack(
-          children: _pages,
-          index: _activeIndex,
-        ));
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _activeIndex = index;
-    });
-  }
-
-  List<BottomNavigationBarItem> buildBarItems(BuildContext context) {
-    var items = [
-      BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(_home.title)),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.camera), title: Text(_program.title)),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.error), title: Text(_about.title)),
-    ];
-    return items;
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _activeIndex,
+        onTap: (index) {
+          setState(() {
+            _activeIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text(_home.title),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera),
+            title: Text(_program.title),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.error),
+            title: Text(_about.title),
+          ),
+        ],
+      ),
+      body: IndexedStack(
+        children: _pages,
+        index: _activeIndex,
+      ),
+    );
   }
 }

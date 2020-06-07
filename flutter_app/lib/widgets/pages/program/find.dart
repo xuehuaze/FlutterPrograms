@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../assert.dart';
 
@@ -47,6 +48,7 @@ class _FindState extends State<Find>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     var index = _widgetIndex.index;
     return Scaffold(
       // appBar: AppBar(title: Text(widget.title)),
@@ -66,8 +68,10 @@ class _FindState extends State<Find>
             child: ListView.builder(
               padding: EdgeInsets.only(top: 12, bottom: 12),
               itemBuilder: (BuildContext context, int index) {
-                var item = _itemsInfo[index];
-                return ProgramItemWidget(info: item);
+                return ChangeNotifierProvider.value(
+                  value: _itemsInfo[index],
+                  child: ProgramItemWidget(),
+                );
               },
               itemCount: _itemsInfo.length,
             ),
@@ -105,8 +109,6 @@ class _FindState extends State<Find>
       var item = ProgramItemInfo(
         index: index,
         spec: _specs[index],
-        showProcess: false,
-        processValue: 0.0,
         buttonTitle: '添加',
         buttonOnPressed: (ProgramItemInfo info) {
           downloadProgram(info);
@@ -144,11 +146,11 @@ class _FindState extends State<Find>
     try {
       await ProgramsManager().downloadProgram(itemInfo.spec,
           onProgress: (received, total, process) {
-        setState(() {
-          var _itemInfo = _itemsInfo[_itemsInfo.indexOf(itemInfo)];
-          _itemInfo.processValue = process;
-          _itemInfo.showProcess = true;
-        });
+        // setState(() {
+        var _itemInfo = _itemsInfo[_itemsInfo.indexOf(itemInfo)];
+        _itemInfo.processValue = process;
+        _itemInfo.showProcess = true;
+        // });
       });
       if (mounted) {
         _itemsInfo.remove(itemInfo);

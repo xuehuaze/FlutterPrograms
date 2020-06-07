@@ -7,7 +7,10 @@ import '../../../assert.dart';
 class Program extends BasePage {
   Program() : super(title: '发现');
   static const String routeName = '/Program';
-  final tabViews = <BasePage>[Find(), Favorite()];
+  final tabViews = <BasePage>[
+    Find(),
+    Favorite(),
+  ];
 
   ProgramState createState() => ProgramState();
 }
@@ -18,7 +21,10 @@ class ProgramState extends State<Program> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(vsync: this, length: widget.tabViews.length);
+    _controller = TabController(
+      vsync: this,
+      length: widget.tabViews.length,
+    );
   }
 
   @override
@@ -53,7 +59,11 @@ class ProgramState extends State<Program> with SingleTickerProviderStateMixin {
                     ),
                   ),
             ),
-            tabs: widget.tabViews.map((f) => Tab(text: f.title)).toList(),
+            tabs: widget.tabViews
+                .map(
+                  (f) => Tab(text: f.title),
+                )
+                .toList(),
           ),
         ),
       ),

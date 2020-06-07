@@ -11,7 +11,6 @@ class BasePage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return null;
   }
 }

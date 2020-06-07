@@ -188,7 +188,11 @@ class _ProgramDetailIntroduceState extends State<ProgramDetailIntroduce> {
 
 // Program 详情页 Item
 class ProgramDetailItem extends StatelessWidget {
-  ProgramDetailItem({Key key, this.title, this.child}) : super(key: key);
+  ProgramDetailItem({
+    Key key,
+    this.title,
+    this.child,
+  }) : super(key: key);
   final String title;
   final Widget child;
 
@@ -203,13 +207,13 @@ class ProgramDetailItem extends StatelessWidget {
             child: Separator(),
           ),
           Container(
-              padding:
-                  EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
-              child: Text(
-                title,
-                style: const TextStyle(
-                    fontSize: 20.0, fontWeight: FontWeight.bold),
-              )),
+            padding: EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
+            child: Text(
+              title,
+              style:
+                  const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          ),
           child
         ],
       ),

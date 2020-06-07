@@ -18,6 +18,7 @@ dependencies:
   json_annotation:
   event_bus:
   cached_network_image: 2.0.0-rc
+  provider: "4.0.5+1"
   middleman:
     path: ../flutter_plugin/middleman
 
