@@ -1,5 +1,5 @@
-import 'package:logging/logging.dart';
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 void setupLogger() {
   Logger.root.level = Level.ALL;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './loading_widget.dart';
 
 class EmptyWidget extends StatefulWidget {

@@ -1,8 +1,9 @@
 library flutter_app;
 
 import 'package:flutter/material.dart';
-import 'config/themes.dart';
+
 import 'app.dart';
+import 'config/themes.dart';
 import 'tools/logging.dart';
 
 class ProgramsApp extends StatelessWidget {

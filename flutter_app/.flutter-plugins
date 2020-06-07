@@ -1,10 +1,13 @@
 # This is a generated file; do not edit or check into version control.
 middleman=/Users/guhaijun3/Documents/Projects/FlutterPrograms/flutter_plugin/middleman/
-path_provider=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/path_provider-1.5.1/
-share=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/share-0.6.3+5/
-shared_preferences=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.5/
-shared_preferences_macos=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+3/
-sqflite=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/sqflite-1.2.0/
-url_launcher=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher-5.4.1/
-url_launcher_macos=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-0.0.1+2/
-url_launcher_web=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_web-0.1.0+2/
+path_provider=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/path_provider-1.6.10/
+path_provider_linux=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-0.0.1+1/
+path_provider_macos=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/path_provider_macos-0.0.4+3/
+share=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/share-0.6.4+3/
+shared_preferences=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.7+3/
+shared_preferences_macos=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+10/
+shared_preferences_web=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-0.1.2+7/
+sqflite=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/sqflite-1.3.0+2/
+url_launcher=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher-5.4.10/
+url_launcher_macos=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-0.0.1+7/
+url_launcher_web=/Users/guhaijun3/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_web-0.1.1+6/

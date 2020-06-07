@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'tools/utils.dart';
-import 'tools/logging.dart';
 
-import 'package:flutter/foundation.dart' show defaultTargetPlatform;
-import 'package:url_launcher/url_launcher.dart';
-
+import 'widgets/base/base_page.dart';
+import 'widgets/pages/about/about.dart';
 import 'widgets/pages/home/home.dart';
 import 'widgets/pages/program/program.dart';
-import 'widgets/pages/about/about.dart';
-import 'widgets/base/base_page.dart';
 
 class Main extends StatefulWidget {
   Main({Key key, this.title}) : super(key: key);

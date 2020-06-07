@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../assert.dart';
-import './find.dart';
+
 import './favorite.dart';
+import './find.dart';
+import '../../../assert.dart';
 
 class Program extends BasePage {
   Program() : super(title: '发现');
